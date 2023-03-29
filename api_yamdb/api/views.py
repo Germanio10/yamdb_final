@@ -15,12 +15,12 @@ from user.models import User
 from .email import send_confirmation_code
 from .filters import TitleFilter
 from .mixins import ListCreateDestroyViewSet
-from .permissions import (IsAdmin, IsAdminOrReadOnly, IsAuthorOrModerator)
+from .permissions import IsAdmin, IsAdminOrReadOnly, IsAuthorOrModerator
 from .serializers import (AdminUserSerializer, CategorySerializer,
                           CommentSerializer, GenreSerializer,
                           ReadOnlyTitleSerializer, ReviewSerializer,
-                          SignUpSerializer, TitleSerializer,
-                          TokenSerializer, UserSerializer)
+                          SignUpSerializer, TitleSerializer, TokenSerializer,
+                          UserSerializer)
 
 
 class UserRegView(generics.CreateAPIView):
