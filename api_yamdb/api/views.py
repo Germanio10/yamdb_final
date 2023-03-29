@@ -1,27 +1,26 @@
-from django.db.models import Avg
 from django.contrib.auth.tokens import default_token_generator
+from django.db.models import Avg
 from django.shortcuts import get_object_or_404
-from rest_framework import filters, status, viewsets, pagination, generics
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, generics, pagination, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import (AllowAny, IsAuthenticated,
                                         IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
-from django_filters.rest_framework import DjangoFilterBackend
-
 from reviews.models import Category, Genre, Review, Title
 from user.models import User
 
 from .email import send_confirmation_code
-from .mixins import ListCreateDestroyViewSet
-from .permissions import (IsAdmin, IsAuthorOrModerator, IsAdminOrReadOnly)
-from .serializers import (AdminUserSerializer, SignUpSerializer,
-                          TokenSerializer, UserSerializer, ReviewSerializer,
-                          CommentSerializer, GenreSerializer,
-                          CategorySerializer, TitleSerializer,
-                          ReadOnlyTitleSerializer)
 from .filters import TitleFilter
+from .mixins import ListCreateDestroyViewSet
+from .permissions import (IsAdmin, IsAdminOrReadOnly, IsAuthorOrModerator)
+from .serializers import (AdminUserSerializer, CategorySerializer,
+                          CommentSerializer, GenreSerializer,
+                          ReadOnlyTitleSerializer, ReviewSerializer,
+                          SignUpSerializer, TitleSerializer,
+                          TokenSerializer, UserSerializer)
 
 
 class UserRegView(generics.CreateAPIView):
