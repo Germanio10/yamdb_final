@@ -48,6 +48,10 @@ http://127.0.0.1:8000/redoc/
 
 https://github.com/Germanio10/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=feature-1
 
+## Ip server
+
+158.160.62.132
+
  
 #### Разработчики: 
 * Антон Цыганок 
