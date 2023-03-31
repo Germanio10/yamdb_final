@@ -41,9 +41,9 @@ jobs:
         with:
           context: ./api_yamdb/
           push: true
-          tags: germanio10/yamdb:v1.03.2023
-          
-  
+          tags: germanio10/api_yamdb:latest
+    
+
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
@@ -55,6 +55,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            sudo docker pull germanio10/api_yamdb:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
