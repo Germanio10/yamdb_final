@@ -50,7 +50,7 @@ https://github.com/Germanio10/yamdb_final/actions/workflows/yamdb_workflow.yml/b
 
 ## Ip server
 
-158.160.62.132
+http://158.160.50.237
 
  
 #### Разработчики: 
